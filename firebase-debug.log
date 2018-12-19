@@ -1,0 +1,30 @@
+[debug] [2018-12-19T11:40:48.087Z] ----------------------------------------------------------------------
+[debug] [2018-12-19T11:40:48.089Z] Command:       /Users/oleksandrsachuk/.nvm/versions/node/v10.14.1/bin/node /Users/oleksandrsachuk/.nvm/versions/node/v10.14.1/bin/firebase serve
+[debug] [2018-12-19T11:40:48.089Z] CLI Version:   6.1.2
+[debug] [2018-12-19T11:40:48.089Z] Platform:      darwin
+[debug] [2018-12-19T11:40:48.089Z] Node Version:  v10.14.1
+[debug] [2018-12-19T11:40:48.090Z] Time:          Wed Dec 19 2018 13:40:48 GMT+0200 (Eastern European Standard Time)
+[debug] [2018-12-19T11:40:48.090Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-12-19T11:40:48.099Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-12-19T11:40:48.100Z] > authorizing via signed-in user
+[debug] [2018-12-19T11:40:48.100Z] [iam] checking project wishlist-d44c1 for permissions ["firebase.projects.get"]
+[debug] [2018-12-19T11:40:48.101Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-12-19T11:40:48.102Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2018-12-19T11:40:48.269Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-19T11:40:48.284Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/wishlist-d44c1:testIamPermissions  
+
+[debug] [2018-12-19T11:40:49.385Z] <<< HTTP RESPONSE 200
+[debug] [2018-12-19T11:40:49.386Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/wishlist-d44c1  
+ 
+[debug] [2018-12-19T11:40:50.279Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/oleksandrsachuk/Development/wishlist-firebase'...
+[info] 
+[debug] [2018-12-19T11:40:50.281Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/318358467162/clients/_:getWebAppConfig  
+ 
+[debug] [2018-12-19T11:42:05.522Z] Error: connect ETIMEDOUT 172.217.16.42:443
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1113:14)
+[error] 
+[error] Error: Server Error. connect ETIMEDOUT 172.217.16.42:443
