@@ -11,7 +11,15 @@ echo $COMMIT_MESSAGE
 
 git checkout develop
 git merge --squash $CURRENT_BRANCH_NAME
-git commit -m "$COMMIT_MESSAGE"
 
-echo "${GREEN_COLOR}Branch CURRENT_BRANCH_NAME merged and squashed${RESET_COLOR}"
-exit 1
+if ! (git commit -m "$COMMIT_MESSAGE") then
+   echo "${RED_COLOR}Something wrong${RESET_COLOR}"
+    exit 1
+else
+   echo "${GREEN_COLOR}Branch CURRENT_BRANCH_NAME merged and squashed${RESET_COLOR}"
+   exit 1
+fi
+
+
+
+
