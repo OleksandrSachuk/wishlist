@@ -1,5 +1,5 @@
-import { ofType } from 'redux-observable';
-import { tap } from 'rxjs/operators';
+import {ofType} from 'redux-observable';
+import {tap} from 'rxjs/operators';
 
 export default (action$) =>
   action$.pipe(

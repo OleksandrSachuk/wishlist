@@ -1,4 +1,16 @@
 {
   "singleQuote": true,
-  arrowParens: always
+  "arrowParens": "always",
+  "printWidth": 120,
+  "tabWidth": 2,
+  "react/jsx-max-props-per-line": [
+    1,
+    {
+      "when": "multiline"
+    }
+  ],
+  "bracketSpacing": false,
+  "max-len": [
+    2
+  ]
 }

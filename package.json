@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "@babel/core": "7.1.0",
+    "@material-ui/core": "^3.6.2",
+    "@material-ui/icons": "^3.0.1",
     "@svgr/webpack": "2.4.1",
     "add": "^2.0.6",
     "babel-core": "7.0.0-bridge.0",
@@ -68,7 +70,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json}": [
+    "src/**/*.{js,jsx,ts,tsx,json}": [
       "eslint --fix",
       "prettier --config .prettierrc --write",
       "git add"
@@ -83,6 +85,8 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "precommit": "lint-staged",
+    "format": "pretty-quick",
+    "lint": "eslint ./",
     "test:lint:js": "eslint --ext=js --ext=jsx .",
     "test:lint:scss": "stylelint --config=.stylelintrc '**/*.scss'",
     "test:lint": "run-s test:lint:**",
@@ -158,13 +162,15 @@
     "eslint-loader": "2.1.1",
     "eslint-plugin-flowtype": "2.50.1",
     "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.0",
     "husky": "^1.2.0",
     "lint-staged": "^8.1.0",
     "node-sass": "^4.10.0",
     "prettier": "^1.15.3",
+    "pretty-quick": "^1.8.0",
+    "react-axe": "^3.0.2",
     "stylelint": "^9.9.0",
     "stylelint-config-standard": "^18.2.0",
     "typescript": "^3.2.2",
