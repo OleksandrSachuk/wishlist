@@ -19,7 +19,3 @@ else
    echo "${GREEN_COLOR}Branch CURRENT_BRANCH_NAME merged and squashed${RESET_COLOR}"
    exit 1
 fi
-
-
-
-
