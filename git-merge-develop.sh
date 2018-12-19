@@ -16,6 +16,6 @@ if ! (git commit -m "$COMMIT_MESSAGE") then
    echo "${RED_COLOR}Something wrong${RESET_COLOR}"
     exit 1
 else
-   echo "${GREEN_COLOR}Branch CURRENT_BRANCH_NAME merged and squashed${RESET_COLOR}"
+   echo "${GREEN_COLOR}Branch $CURRENT_BRANCH_NAME merged and squashed${RESET_COLOR}"
    exit 1
 fi
