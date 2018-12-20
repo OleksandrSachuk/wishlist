@@ -1,7 +1,7 @@
 {
   "singleQuote": true,
   "arrowParens": "always",
-  "printWidth": 120,
+  "printWidth": 80,
   "tabWidth": 2,
   "react/jsx-max-props-per-line": [
     1,
@@ -10,7 +10,5 @@
     }
   ],
   "bracketSpacing": false,
-  "max-len": [
-    2
-  ]
+  "max-len": ["error", {"code": 80, "ignoreUrls": true}]
 }

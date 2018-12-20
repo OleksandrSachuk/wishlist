@@ -1,4 +1,4 @@
-import createReducer from '../../../shared/utils/createReducer';
+import createReducer from 'shared/utils/createReducer';
 
 const defaultState = {};
 

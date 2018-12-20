@@ -72,8 +72,8 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json}": [
-      "eslint --fix",
-      "prettier --config .prettierrc --write",
+      "pretty-quick --staged",
+      "eslint src/ --fix",
       "git add"
     ],
     "src/**/*.{scss,css}": [
@@ -86,8 +86,9 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "precommit": "lint-staged",
-    "format": "pretty-quick",
-    "lint": "eslint ./",
+    "format": "pretty-quick --staged",
+    "lint": "eslint --print-config . | eslint-config-prettier-check",
+    "lint-check": "eslint ./",
     "test:lint:js": "eslint --ext=js --ext=jsx .",
     "test:lint:scss": "stylelint --config=.stylelintrc '**/*.scss'",
     "test:lint": "run-s test:lint:**",
@@ -166,6 +167,7 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-prettier": "^3.0.0",
     "eslint-plugin-react": "^7.11.0",
+    "eslint-plugin-standard": "^4.0.0",
     "husky": "^1.2.0",
     "lint-staged": "^8.1.0",
     "node-sass": "^4.10.0",

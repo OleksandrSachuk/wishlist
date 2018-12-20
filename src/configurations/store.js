@@ -10,7 +10,12 @@ import {createBrowserHistory} from 'history';
 import {routerMiddleware} from 'connected-react-router';
 import createRootReducer from './reducers';
 
-import {isDevelopment, isEnableLogs, isEnableDevtools, isEnableUpdateAnalytics} from './utils';
+import {
+  isDevelopment,
+  isEnableLogs,
+  isEnableDevtools,
+  isEnableUpdateAnalytics
+} from './utils';
 import logger from './logger';
 import templateEpic from '../modules/module1/epics';
 
@@ -50,21 +55,32 @@ export default function configureStore(preloadedState) {
 
   if (isDevelopment && isEnableUpdateAnalytics) {
     /* eslint-disable global-require */
+    /* eslint import/no-extraneous-dependencies: ["error", {"peerDependencies": true}] */
     const {whyDidYouUpdate} = require('why-did-you-update');
-    /* eslint-enable global-require */
+
     whyDidYouUpdate(React);
   }
 
   if (isDevelopment) {
+    /* eslint import/no-extraneous-dependencies: ["error", {"peerDependencies": true}] */
     const axe = require('react-axe');
+    /* eslint-enable global-require */
     axe(React, ReactDOM, 1000);
   }
 
-  const store = createStore(persistedReducer, preloadedState, composedEnhancers);
+  const store = createStore(
+    persistedReducer,
+    preloadedState,
+    composedEnhancers
+  );
 
   epicMiddleware.run(rootEpic);
 
   const persistor = persistStore(store);
 
-  return {store, persistor, history};
+  return {
+    store,
+    persistor,
+    history
+  };
 }

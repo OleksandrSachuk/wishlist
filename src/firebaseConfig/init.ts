@@ -1,5 +1,6 @@
-import * as app from 'firebase/app';
+import * as firebase from 'firebase/app';
 import 'firebase/auth';
+import 'firebase/firestore';
 
 const config = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -9,6 +10,9 @@ const config = {
   storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
   messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID
 };
+firebase.initializeApp(config);
+export const googleProvider = new firebase.auth.GoogleAuthProvider();
+export const FirebaseAuth = firebase.auth();
+export const db = firebase.firestore().settings({timestampsInSnapshots: true});
 
-const FirebaseApp = app.initializeApp(config);
-export default FirebaseApp;
+export default firebase;

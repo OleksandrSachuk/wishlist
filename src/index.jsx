@@ -4,7 +4,7 @@ import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
 
 import ErrorBoundary from 'modules/common/ErrorBoundary/ErrorBoundary';
-import FirebaseApp, {FirebaseContext} from 'firebaseConfig';
+import {FirebaseApp, FirebaseContext} from 'firebaseConfig';
 
 import './index.css';
 import Pages from './pages';

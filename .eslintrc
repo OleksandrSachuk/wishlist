@@ -10,12 +10,19 @@
   "settings": {
     "react": {
       "version": "^16.6.3"
+    },
+    "import/resolver": {
+      "webpack": {
+        "config": "config/webpack.config.dev.js"
+      }
     }
   },
   "extends": [
-    "eslint:recommended",
+    "airbnb",
     "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended"
+    "plugin:jsx-a11y/recommended",
+    "prettier",
+    "prettier/react"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -24,11 +31,18 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": [
-    "react",
-    "jsx-a11y"
-  ],
+  "plugins": ["react", "jsx-a11y", "prettier"],
   "rules": {
-    "react/display-name": 0
+    "prettier/prettier": "error",
+    "react/display-name": 0,
+    "import/no-unresolved": 0,
+    "object-property-newline": "error",
+    "indent": [
+      "error",
+      2,
+      {
+        "ObjectExpression": 1
+      }
+    ]
   }
 }
