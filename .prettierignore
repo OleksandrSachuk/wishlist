@@ -2,7 +2,7 @@
 .prettierignore
 
 /node_modules
-/functions//node_modules
+/functions/node_modules
 
 /public
 /config
