@@ -9,15 +9,17 @@ import PrivatePage from './PrivatePage';
 
 const Pages = ({history}: {history: any}) => (
   <ConnectedRouter history={history}>
-    <main>
+    <div>
       <Header />
-      <React.Suspense fallback={<div>Loading...</div>}>
-        <Switch>
-          <Route exact path="/" component={Component1} />
-          <PrivatePage path="/component1" component={Component1} />
-        </Switch>
-      </React.Suspense>
-    </main>
+      <main>
+        <React.Suspense fallback={<div>Loading...</div>}>
+          <Switch>
+            <Route exact path="/" component={Component1} />
+            <PrivatePage path="/component1" component={Component1} />
+          </Switch>
+        </React.Suspense>
+      </main>
+    </div>
   </ConnectedRouter>
 );
 
