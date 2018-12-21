@@ -1,19 +1,16 @@
-import {getToken, isToken, removeToken, setToken} from 'shared/utils/token';
-import {FirebaseAuth, googleProvider} from '..';
+import {FirebaseApp, googleProvider} from '..';
 
-console.log('googleProvider', googleProvider);
 const loginWithGoogle = () =>
-  FirebaseAuth.signInWithPopup(googleProvider).catch((err: any) => {
-    console.error('loginWithGoogle error: ', err);
-    return isToken() && removeToken();
-  });
+  FirebaseApp.auth()
+    .signInWithPopup(googleProvider)
+    .catch((err: any) => console.error('loginWithGoogle error: ', err));
 
-const logout = () => FirebaseAuth.signOut();
+const logout = () => FirebaseApp.auth().signOut();
 
-// FirebaseAuth().onAuthStateChanged((user) => {
-//   if (user) {
-//     setToken(user.uid);
-//     console.log('getToken', getToken());
-//   }
-// });
+FirebaseApp.auth().onAuthStateChanged((user) => {
+  if (user) {
+    const {email, displayName, photoURL} = user;
+    const user2 = {email, displayName, photoURL};
+  }
+});
 export {loginWithGoogle, logout};

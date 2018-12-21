@@ -8,9 +8,7 @@ RESET_COLOR=`tput sgr0`
 echo $COMMIT_MESSAGE
 [[ !  -z  $COMMIT_MESSAGE  ]] || { echo "${RED_COLOR}Please, add commit message${RESET_COLOR}"; exit 1; }
 [[ !  -z  CURRENT_BRANCH_NAME  ]] || { echo "${RED_COLOR}No current branch find${RESET_COLOR}"; exit 1; }
-
-git add .
-git commit -m "$COMMIT_MESSAGE"
+git status
 git checkout develop
 git merge --squash $CURRENT_BRANCH_NAME
 

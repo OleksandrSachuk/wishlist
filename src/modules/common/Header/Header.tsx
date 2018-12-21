@@ -14,14 +14,26 @@ interface IProps {
   loginWithGoogle: any;
 }
 
-const Header: React.FunctionComponent<IProps> = ({classes, loginWithGoogle}) => (
+const Header: React.FunctionComponent<IProps> = ({
+  classes,
+  loginWithGoogle
+}) => (
   <div className={classes.root}>
     <AppBar position="static">
       <Toolbar>
-        <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+        <IconButton
+          className={classes.menuButton}
+          color="inherit"
+          aria-label="Menu"
+        >
           <MenuIcon />
         </IconButton>
-        <Typography variant="h6" color="inherit" align="center" className={classes.grow}>
+        <Typography
+          variant="h6"
+          color="inherit"
+          align="center"
+          className={classes.grow}
+        >
           WISHLIST
         </Typography>
         <Button color="inherit" onClick={loginWithGoogle}>

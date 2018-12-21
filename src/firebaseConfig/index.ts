@@ -1,4 +1,4 @@
-import FirebaseApp, {googleProvider, FirebaseAuth} from './init';
+import FirebaseApp, {googleProvider} from './init';
 import FirebaseContext from './context';
 
-export {FirebaseApp, FirebaseContext, googleProvider, FirebaseAuth};
+export {FirebaseApp, FirebaseContext, googleProvider};

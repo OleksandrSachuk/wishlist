@@ -10,9 +10,11 @@ const config = {
   storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
   messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID
 };
+
 firebase.initializeApp(config);
 export const googleProvider = new firebase.auth.GoogleAuthProvider();
-export const FirebaseAuth = firebase.auth();
+googleProvider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+firebase.auth().useDeviceLanguage();
 export const db = firebase.firestore().settings({timestampsInSnapshots: true});
 
 export default firebase;
