@@ -1,15 +1,18 @@
 import {connect} from 'react-redux';
 import {compose} from 'recompose';
 
-import {loginWithGoogle} from 'firebaseConfig/utils';
+import {authorizationGoogleButton} from 'modules/authorization/actions/authorization';
 
 import Header from './Header';
 
-const mapDispatchToProps = () => ({loginWithGoogle});
+const mapStateToProps = null;
+const mapDispatchToProps = {
+  authorizationGoogleButton
+};
 
 export default compose(
   connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps
   )
 )(Header);

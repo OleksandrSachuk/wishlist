@@ -11,12 +11,12 @@ import {styles} from './styles';
 
 interface IProps {
   classes: any;
-  loginWithGoogle: any;
+  authorizationGoogleButton: any;
 }
 
 const Header: React.FunctionComponent<IProps> = ({
   classes,
-  loginWithGoogle
+  authorizationGoogleButton
 }) => (
   <div className={classes.root}>
     <AppBar position="static">
@@ -36,7 +36,7 @@ const Header: React.FunctionComponent<IProps> = ({
         >
           WISHLIST
         </Typography>
-        <Button color="inherit" onClick={loginWithGoogle}>
+        <Button color="inherit" onClick={authorizationGoogleButton}>
           Login
         </Button>
       </Toolbar>

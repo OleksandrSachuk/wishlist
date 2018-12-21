@@ -1,3 +1,3 @@
-import {loginWithGoogle, logout} from './authFunctions';
+import {firebaseLoginGoogle, logout} from './authFunctions';
 
-export {loginWithGoogle, logout};
+export {firebaseLoginGoogle, logout};

@@ -8,8 +8,9 @@ import storage from 'redux-persist/lib/storage';
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 import {createBrowserHistory} from 'history';
 import {routerMiddleware} from 'connected-react-router';
-import createRootReducer from './reducers';
+import authorizationEpics from 'modules/authorization/epics';
 
+import createRootReducer from './reducers';
 import {
   isDevelopment,
   isEnableLogs,
@@ -17,9 +18,8 @@ import {
   isEnableUpdateAnalytics
 } from './utils';
 import logger from './logger';
-import templateEpic from '../modules/module1/epics';
 
-const rootEpic = combineEpics(templateEpic);
+const rootEpic = combineEpics(authorizationEpics);
 
 const persistConfig = {
   key: 'root',
