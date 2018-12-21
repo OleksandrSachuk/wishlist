@@ -1,4 +1,4 @@
-import React, {StrictMode} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {PersistGate} from 'redux-persist/integration/react';
@@ -16,13 +16,11 @@ const {store, persistor, history} = configureStore();
 ReactDOM.render(
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
-      <StrictMode>
-        <ErrorBoundary>
-          <FirebaseContext.Provider value={FirebaseApp}>
-            <Pages history={history} />
-          </FirebaseContext.Provider>
-        </ErrorBoundary>
-      </StrictMode>
+      <ErrorBoundary>
+        <FirebaseContext.Provider value={FirebaseApp}>
+          <Pages history={history} />
+        </FirebaseContext.Provider>
+      </ErrorBoundary>
     </PersistGate>
   </Provider>,
   document.getElementById('root')
